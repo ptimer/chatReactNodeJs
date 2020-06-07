@@ -1,10 +1,15 @@
 @import '../../styles/_variables';
 
+
 .message{
 	$self: &;
-	display: flex;
-	max-width: 440px;
-	margin-bottom: 15px;
+
+	&__content{
+		display: flex;
+		max-width: 440px;
+		margin-bottom: 15px;
+		position: relative;
+	}
 
 	&__avatar{
 		display: flex;
@@ -40,33 +45,38 @@
 	&--isme {
 		display: flex;
 		flex-direction: row-reverse;
-		
+
 		#{$self}__content{
+			margin-bottom: 15px;
 			flex-direction: row-reverse;
 		}
 
 		#{$self}__avatar{
 			img{
 				margin-right: 0;
-				margin-left: 13px;
+				margin-left: 13px
 			}
 		}
-
 
 		#{$self}__info{
 			text-align: right;
 		}
 
-
 		#{$self}__buble{
 			background: #ffffff;
-		    border: 1px solid #ececec;
-		    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.0220444);
-		    border-radius: 12px 12px 0px 12px;
-		    #{$self}__text {
-		      color: $black;
-		    }
+			border: 1px solid #ececec;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.020444);
+			border-radius: 12px 12px 0px 12px;
+
+			#{$self}__text{
+				color: $black;
+			}
 		}
 
+		#{$self}__icon-readed{
+			position: absolute;
+			bottom: 20px;
+			left: -20px;
+		}
 	}
 }

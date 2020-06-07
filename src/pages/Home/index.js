@@ -20,6 +20,8 @@ const Home = props => {
 			text="Салам, Брут !"
 			date={new Date("Sun Jun 07 2020 16:15:17")}
 			isMe={true}
+			isReaded={false}
+			
 			/>
 		</section>
 
