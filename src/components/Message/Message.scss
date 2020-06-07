@@ -42,6 +42,20 @@
 		line-height: 20px;
 	}
 
+	&__attachments{
+		display: flex;
+
+		&-item{
+			margin-right: 5px;
+			cursor: pointer;
+			img{
+				width: 45px;
+				height: 45px;
+				border-radius: 8px;
+			}
+		}
+	}
+
 	&--isme {
 		display: flex;
 		flex-direction: row-reverse;

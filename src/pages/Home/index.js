@@ -12,7 +12,20 @@ const Home = props => {
 			avatar="https://lh3.googleusercontent.com/proxy/pYODNNbwXErDbeS_bsZ-JzE-PgZUwBgVs6pnsqd2FoOAQOEjB1lsw-cI8SvnFc-Ntuo1LKAusmKhNWMfLV6CnD6lU0SWtmZvqTW-GwBbOTSNHG8nZ28kjKSKSXrbT_d3dCitG1MXngWh"
 			text="Салам, Брут ! Че как, уничтожил флот галлов ?"
 			date={new Date("Sun Jun 07 2020 16:15:17")}
-			isMe={false}
+			attachments = {[
+				{
+					filename: 'image.jpg',
+					url: 'https://source.unsplash.com/WLUHO9A_xik/1600x900'
+				},
+				{
+					filename: 'image.jpg',
+					url: 'https://source.unsplash.com/WLUHO9A_xik/1600x900'
+				},
+				{
+					filename: 'image.jpg',
+					url: 'https://source.unsplash.com/WLUHO9A_xik/1600x900'
+				}
+			]}
 			/>
 
 			<Message
@@ -21,7 +34,6 @@ const Home = props => {
 			date={new Date("Sun Jun 07 2020 16:15:17")}
 			isMe={true}
 			isReaded={false}
-			
 			/>
 		</section>
 
