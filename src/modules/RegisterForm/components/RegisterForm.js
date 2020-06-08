@@ -25,23 +25,24 @@ const RegisterForm = props => {
         <Block>
          { !success ? (
           <Form onSubmit={handleSubmit}>
-            <Form.Item hasFeedback validateStatus={!touched.email ? "" : errors.email ? "error" : "success"}>
+            <Form.Item hasFeedback validateStatus={!touched.email ? "" : errors.email ? "error" : "success"}
+              help={errors.email && touched.email ? errors.email : ""}>
               <Input
                     name="email"
                     onChange={handleChange}
                     onBlur={handleBlur} size="large" className="auth__username" prefix={<MailOutlined/>} placeholder="E-mail" 
               />
             </Form.Item>
-
-            <Form.Item hasFeedback validateStatus={!touched.username ? '' : errors.username ? "error" : "success"}>
+            <Form.Item hasFeedback validateStatus={!touched.username ? '' : errors.username ? "error" : "success"}
+              help={errors.username && touched.username ? errors.username : ""}>
               <Input 
                     name="username"
                     onChange={handleChange}
                     onBlur={handleBlur} size="large" className="auth__username" prefix={<UserOutlined/>} placeholder="Ваше имя" 
               />
             </Form.Item>
-
-            <Form.Item hasFeedback validateStatus={!touched.password ? '' : errors.password ? "error" : "success"}>
+            <Form.Item hasFeedback validateStatus={!touched.password ? '' : errors.password ? "error" : "success"}
+               help={errors.password && touched.password ? errors.password : ""}>
               <Input
                 name="password"
                 onChange={handleChange}
@@ -50,8 +51,8 @@ const RegisterForm = props => {
               />
 
             </Form.Item>
-
-            <Form.Item hasFeedback validateStatus={!touched.password_repeat ? '' : errors.password_repeat ? "error" : "success"}>
+            <Form.Item hasFeedback validateStatus={!touched.password_repeat ? '' : errors.password_repeat ? "error" : "success"}
+             help={errors.password_repeat && touched.password_repeat ? errors.password_repeat : ""}>
               <Input 
                 name="password_repeat"
                 onChange={handleChange}
@@ -60,7 +61,6 @@ const RegisterForm = props => {
               />
 
             </Form.Item>
-
             <Form.Item>
               <Button type="primary" onClick={handleSubmit} htmlType="submit" size="large">
                 Зарегистрироваться
