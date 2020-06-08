@@ -1,8 +1,6 @@
 import React from 'react'
-import {Route} from 'react-router-dom'
 
 import './Home.scss';
-import { LoginForm, RegisterForm } from '../../modules/index';
 import { Message } from '../../components/index'
 
 const Home = props => {

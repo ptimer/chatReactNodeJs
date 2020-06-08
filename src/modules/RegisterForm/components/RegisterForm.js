@@ -1,15 +1,20 @@
-import React, {Component} from 'react'
-import { Form, Input, Checkbox } from 'antd';
+import React from 'react'
+import { Form, Input } from 'antd';
 import { UserOutlined, LockOutlined, MailOutlined, InfoCircleTwoTone } from '@ant-design/icons';
 import { Link } from 'react-router-dom'
 
 import { Button, Block } from '../../../components/index'
 
-class RegisterForm extends Component {
-
-  render() {
-
+const RegisterForm = props => {
     const success = false;
+    const {
+      values,
+      touched,
+      errors,
+      handleChange,
+      handleBlur,
+      handleSubmit,
+    } = props;
 
     return (
       <div>
@@ -19,74 +24,45 @@ class RegisterForm extends Component {
         </div>
         <Block>
          { !success ? (
-          <Form
-            name="normal_login"
-            initialValues={{
-              remember: true,
-            }}
-          >
-            <Form.Item
-              hasFeedback validateStatus="success"
-              name="email"
-              rules={[
-                {
-                  required: true,
-                  message: 'Please input your Username!',
-                },
-              ]}
-            >
-              <Input size="large" className="auth__username" prefix={<MailOutlined/>} placeholder="E-mail" />
+          <Form onSubmit={handleSubmit}>
+            <Form.Item hasFeedback validateStatus={!touched.email ? "" : errors.email ? "error" : "success"}>
+              <Input
+                    name="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur} size="large" className="auth__username" prefix={<MailOutlined/>} placeholder="E-mail" 
+              />
             </Form.Item>
 
-            <Form.Item
-              hasFeedback validateStatus="success"
-              name="username"
-              rules={[
-                {
-                  required: true,
-                  message: 'Please input your Username!',
-                },
-              ]}
-            >
-              <Input size="large" className="auth__username" prefix={<UserOutlined/>} placeholder="Ваше имя" />
+            <Form.Item hasFeedback validateStatus={!touched.username ? '' : errors.username ? "error" : "success"}>
+              <Input 
+                    name="username"
+                    onChange={handleChange}
+                    onBlur={handleBlur} size="large" className="auth__username" prefix={<UserOutlined/>} placeholder="Ваше имя" 
+              />
             </Form.Item>
 
-            <Form.Item
-              name="password"
-              rules={[
-                {
-                  required: true,
-                  message: 'Please input your Password!',
-                },
-              ]}
-            >
-              <Input size="large" className="auth__password"
-                prefix={<LockOutlined/>}
-                type="password"
-                placeholder="Пароль"
+            <Form.Item hasFeedback validateStatus={!touched.password ? '' : errors.password ? "error" : "success"}>
+              <Input
+                name="password"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                size="large" className="auth__password" prefix={<LockOutlined/>}  type="password" placeholder="Пароль"
               />
 
             </Form.Item>
 
-            <Form.Item
-              name="password"
-              rules={[
-                {
-                  required: true,
-                  message: 'Please input your Password!',
-                },
-              ]}
-            >
-              <Input size="large" className="auth__password"
-                prefix={<LockOutlined/>}
-                type="password"
-                placeholder="Повторить пароль"
+            <Form.Item hasFeedback validateStatus={!touched.password_repeat ? '' : errors.password_repeat ? "error" : "success"}>
+              <Input 
+                name="password_repeat"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                size="large" className="auth__password" prefix={<LockOutlined/>} type="password" placeholder="Повторить пароль"
               />
 
             </Form.Item>
 
             <Form.Item>
-              <Button type="primary" htmlType="submit" size="large">
+              <Button type="primary" onClick={handleSubmit} htmlType="submit" size="large">
                 Зарегистрироваться
               </Button>
             </Form.Item>
@@ -101,7 +77,6 @@ class RegisterForm extends Component {
         </Block>
       </div>
     );
-  }
 };
 
 export default RegisterForm
