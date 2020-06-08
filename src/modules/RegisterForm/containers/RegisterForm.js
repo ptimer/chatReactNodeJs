@@ -1,7 +1,7 @@
 import RegisterForm from '../components/RegisterForm'
 import { withFormik } from 'formik';
 
-import validate from '../../../utils/validate'
+import validateForm from '../../../utils/validate'
 
 export default withFormik({
   mapPropsToValues: () => ({ username: '', email: '', password: '', password_repeat: '' }),
@@ -9,10 +9,8 @@ export default withFormik({
   // Custom sync validation
   validate: values => {
     const errors = {};
-
-	Object.keys(values).keys.forEach(
-		key => validate[key] && validate[key](errors, values[key])
-	);
+      
+    validateForm({isAuth: false, values, errors})
 
     return errors;
   },
