@@ -7,7 +7,7 @@ const Home = props => {
 	return (
 		<section className="home">
 			<Message
-			avatar="https://lh3.googleusercontent.com/proxy/pYODNNbwXErDbeS_bsZ-JzE-PgZUwBgVs6pnsqd2FoOAQOEjB1lsw-cI8SvnFc-Ntuo1LKAusmKhNWMfLV6CnD6lU0SWtmZvqTW-GwBbOTSNHG8nZ28kjKSKSXrbT_d3dCitG1MXngWh"
+			avatar="https://i.pinimg.com/736x/63/4a/6c/634a6c2dc8f5579b3fc1d0147da85b27.jpg"
 			text="Салам, Брут ! Че как, уничтожил флот галлов ?"
 			date={new Date("Sun Jun 07 2020 16:15:17")}
 			attachments = {[
@@ -27,11 +27,16 @@ const Home = props => {
 			/>
 
 			<Message
-			avatar="https://lh3.googleusercontent.com/proxy/pYODNNbwXErDbeS_bsZ-JzE-PgZUwBgVs6pnsqd2FoOAQOEjB1lsw-cI8SvnFc-Ntuo1LKAusmKhNWMfLV6CnD6lU0SWtmZvqTW-GwBbOTSNHG8nZ28kjKSKSXrbT_d3dCitG1MXngWh"
+			avatar="https://i.pinimg.com/736x/63/4a/6c/634a6c2dc8f5579b3fc1d0147da85b27.jpg"
 			text="Салам, Брут !"
 			date={new Date("Sun Jun 07 2020 16:15:17")}
 			isMe={true}
 			isReaded={false}
+			/>
+
+			<Message
+			avatar="https://i.pinimg.com/736x/63/4a/6c/634a6c2dc8f5579b3fc1d0147da85b27.jpg"
+			isTyping={true}
 			/>
 		</section>
 

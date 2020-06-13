@@ -1,6 +1,10 @@
 @import '~reset-css';
 @import '~antd/dist/antd.css'; 
 
+*{
+	box-sizing: border-box;
+}
+
 body, html, #root, .wrapper{
 	height: 100%;
 	color: #202020;
