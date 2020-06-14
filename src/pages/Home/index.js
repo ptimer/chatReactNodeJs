@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './Home.scss';
-import { Message } from '../../components/index'
+import { Message, DialogItem } from '../../components'
 
 const Home = props => {
 	return (
@@ -19,7 +19,13 @@ const Home = props => {
 								}
 							}
 						]} /> */}
-
+			<DialogItem user={
+				{
+					fullname: 'Фёдор Достоевский',
+					avatar: null,
+					isOnline: true,
+				}
+			} unreaded={1}/>
 
 			<Message
 			avatar="https://i.pinimg.com/736x/63/4a/6c/634a6c2dc8f5579b3fc1d0147da85b27.jpg"
