@@ -17,7 +17,7 @@ const DialogItem = ({
         <div className="dialogs__item-info-top">
           <b>Федор достоевский</b>
           <span>
-            <Time>{new Date()}</Time>
+            <Time date={new Date()} />
           </span>
         </div>
         <div className="dialogs__item-info-bottom">

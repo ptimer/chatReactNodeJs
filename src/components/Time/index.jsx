@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import ruLocale from 'date-fns/locale/ru'
 
-const Time = ({ children }) => (
+const Time = ({ date }) => (
   <Fragment>
-    {formatDistanceToNow(children, { addSuffix: true, locale: ruLocale })}
+    {formatDistanceToNow(date, { addSuffix: true, locale: ruLocale })}
   </Fragment>
 );
 

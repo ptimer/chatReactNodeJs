@@ -8,6 +8,8 @@ import noreadedSvg from '../../assets/img/noreaded.svg';
 
 import './Message.scss'
 
+import {Time} from '../'
+
 const Message = ({avatar, user, text, date, isMe, isReaded, attachments, isTyping}) => {
 	return (
 		<div className={classNames('message', {
@@ -51,7 +53,7 @@ const Message = ({avatar, user, text, date, isMe, isReaded, attachments, isTypin
 					</div>
 					{date && 
 						<span className="message__date">
-											{formatDistanceToNow(date, {addSuffix: true, locale: ruLocale })}
+								<Time date={date} />
 						</span>}
 				</div>
 			</div>
