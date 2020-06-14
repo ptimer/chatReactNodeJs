@@ -8,7 +8,7 @@ import noreadedSvg from '../../assets/img/noreaded.svg';
 
 import './Message.scss'
 
-import {Time} from '../'
+import {Time, IconReaded} from '../'
 
 const Message = ({avatar, user, text, date, isMe, isReaded, attachments, isTyping}) => {
 	return (
@@ -20,15 +20,7 @@ const Message = ({avatar, user, text, date, isMe, isReaded, attachments, isTypin
 
 			<div className="message__content">
 
-				{isMe && (isReaded ? (
-					<img className="message__icon-readed" 
-					src={readedSvg} 
-					alt="Checked icon"/>
-				) : (
-					<img className="message__icon-readed" 
-					src={noreadedSvg} 
-					alt="Checked icon"/>
-				))}
+				<IconReaded isMe={isMe} isReaded={isReaded} />
 
 				<div className="message__avatar">
 					{avatar && <img src={avatar} alt={`Avatar ${user.fullname}`}/>}
@@ -72,7 +64,9 @@ Message.propTypes = {
 	date: PropTypes.string,
 	user: PropTypes.object,
 	attachments: PropTypes.array,
-	isTyping: PropTypes.bool
+	isTyping: PropTypes.bool,
+	isMe: PropTypes.bool,
+ 	isReaded: PropTypes.bool
 };
 
 export default Message;
