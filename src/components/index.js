@@ -1,3 +1,5 @@
-export {default as Button} from './Button/index'
-export {default as Block} from './Block/index'
-export {default as Message} from './Message/index'
+export {default as Button} from './Button'
+export {default as Block} from './Block'
+export {default as Message} from './Message'
+export {default as Time} from './Time'
+export {default as DialogItem} from './DialogItem'

@@ -12,34 +12,34 @@ const Message = ({avatar, user, text, date, isMe, isReaded, attachments, isTypin
 	return (
 		<div className={classNames('message', {
 			'message--isme': isMe, 
-			'message--is-typing': isTyping})}>
+			'message--is-typing': isTyping,
+			'message--image': attachments && attachments.length === 1
+		})}>
 
 			<div className="message__content">
 
-				{isMe && isReaded ? (
+				{isMe && (isReaded ? (
 					<img className="message__icon-readed" 
 					src={readedSvg} 
 					alt="Checked icon"/>
-				) : ""}
-
-				{isMe && !isReaded ? (
+				) : (
 					<img className="message__icon-readed" 
 					src={noreadedSvg} 
 					alt="Checked icon"/>
-				) : ""}
+				))}
 
 				<div className="message__avatar">
 					{avatar && <img src={avatar} alt={`Avatar ${user.fullname}`}/>}
 				</div>
 				<div className="message__info">
-					<div className="message__buble">
-						{text && <p className="message__text">{text}</p>}
-						{isTyping && <div className="message__typing">
-							<span></span>
-							<span></span>
-							<span></span>
-						 </div>}
-					</div>
+					{(text || isTyping) && <div className="message__buble">
+											<p className="message__text">{text}</p>
+											{isTyping && <div className="message__typing">
+												<span></span>
+												<span></span>
+												<span></span>
+											 </div>}
+										</div>}
 					<div className="message__attachments">
 						{attachments &&
 							attachments.map(item => (

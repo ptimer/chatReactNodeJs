@@ -20,13 +20,25 @@
 			width: 33px;
 			height: 33px;
 			margin-right: 13px;
-			margin-bottom: 23px;
+			margin-bottom: 5px;
 		}
 	}
 
 	&--is-typing{
 		#{$self}__buble{
 			background-color: $message-typing-blue;
+			padding: 10px 15px;
+		}
+	}
+
+	&--image {
+		#{$self}__attachments{
+			&-item{
+				img{
+					width: 150px;
+					height: 150px;
+				}
+			}
 		}
 	}
 
